@@ -1,0 +1,31 @@
+<div class="container">
+  <h3 class="text-center"> How to create Cascading Drop Down (Country and State list)</h3>
+  <div class="row">
+    <div class="offset-sm-4 col-sm-4">
+<form #userform="ngForm" (ngSubmit)="onsubmit()">
+<label>Country</label>
+<div class="form-group">
+	<select  (change)="changeCountry($event.target.value)"
+  class="form-control" id="country" name="country" 
+            #country="ngModel" [class.is-invalid]="topicHasError && country.touched" [(ngModel)]="model.country">
+        <option value="0">Select Country</option>
+        <option *ngFor ="let count of countryList">{{count.name}} </option>
+    </select>
+</div>
+
+
+<label>City</label>
+<div class="form-group">
+	<select  class="form-control" id="state" name="state" 
+  #state="ngModel"  [(ngModel)]="model.state">
+  <option >Select city</option>
+        <option *ngFor ="let city of cities" >{{city}} </option>
+  </select>
+</div>
+<button type="submit" [disabled]="userform.form.invalid  || topicHasError" class="btn btn-success">Submit</button>
+</form>
+</div>
+</div>
+</div>
+
+<app-tc></app-tc>
