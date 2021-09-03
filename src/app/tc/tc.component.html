@@ -5,12 +5,12 @@
     <div class="form-group">
       <label>Celsius: </label>
       <input type="number" class="form-control" [(ngModel)]="c" (ngModelChange)="changed($event,'c')"  
-      data-test-id="celsius-input"/>
+     />
     </div>
   
     <div class="form-group">
         <label>Fahrenheit: </label>
-        <input type="number" class="form-control" [(ngModel)]="f" (ngModelChange)="changed($event,'f')"  data-test-id="fahrenheit-input"/>
+        <input type="number" class="form-control" [(ngModel)]="f" (ngModelChange)="changed($event,'f')" />
     </div>
   </div>
 </div>
